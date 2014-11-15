@@ -9,7 +9,6 @@
     <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Chatroom</title>
   </head>
 
@@ -33,9 +32,11 @@
 <a id="hackathon" class="anchor" href="#hackathon" aria-hidden="true"><span class="octicon octicon-link"></span></a>hackathon</h1>
     
     <div id='messagesDiv'></div>
-    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='nameInput' placeholder'Name'>
     <input type='text' id='messageInput' placeholder='Message'>
-    <button type="button">Clear all bullshit, fucker!</button>
+    <button onclick="myFunction()">Clear all bullshit, fuckers!</button>
+
+ 
 
     <script>
       var myDataRef = new Firebase('https://hackathonucsd.firebaseio-demo.com/');
@@ -55,6 +56,10 @@
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
+      
+      function myFunction() {
+        myDataRef.remove();
+      }
     </script>
 <p>hackathon</p>
       </section>
@@ -68,10 +73,6 @@
       </footer>
     </div>
 
-   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 
 </html>
