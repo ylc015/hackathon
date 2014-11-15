@@ -33,9 +33,10 @@
     <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
+          <button type="button">Click Me!</button>
+
     <script>
       var myDataRef = new Firebase('https://hackathonucsd.firebaseio-demo.com/');
-      <button type="button">Click Me!</button>;
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
           var name = $('#nameInput').val();
